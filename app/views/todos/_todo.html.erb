@@ -1,0 +1,24 @@
+<div id="<%= dom_id todo %>">
+<!--  <p>
+    <strong>Task:</strong>
+    <%= todo.task %>
+  </p>
+
+  <p>
+    <strong>Check:</strong>
+    <%= todo.check %>
+  </p> -->
+  <table class="table">
+    <tr>
+      <td>
+        <%= form_for(todo, url: toggle_check_todo_path(todo), method: :patch) do |f| %>
+          <%= f.check_box :check, { class: "check-box", onchange: "this.form.submit()" } %>
+        <% end %>
+      </td>
+      <td>
+        <a class="navbar-brand" href="<%= todo_path(todo) %>"><%= todo.task %></a>
+      </td>
+    </tr>
+  </table>
+
+</div>

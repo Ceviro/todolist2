@@ -1,0 +1,15 @@
+<!-- <p style="color: green"><%= notice %></p> -->
+<div class="container-fluid">
+  <%= render @todo %>
+
+  <!-- 
+    <%= link_to "Edit this todo", edit_todo_path(@todo) %> |
+    <%= link_to "Back to todos", todos_path %> 
+  -->
+  <div class="button-container">
+    <%= button_to "Edit", edit_todo_path(@todo), method: :get, class: "btn btn-primary" %>
+    <%= button_to "Destroy this todo", @todo, method: :delete,
+       class: "btn btn-danger"%>
+
+  </div>
+</div>
